@@ -4,9 +4,13 @@ class UsersController < ApplicationController
   end
 
   def create
-  	@user = User.create(user_params)
-    @user.save
-    redirect_to @user
+  	@user = User.new(user_params)
+    if @user.save
+      redirect_to @user
+      UserMailer.welcome_email(@user).deliver     
+    else 
+      render :new
+    end
   end
 
   def index

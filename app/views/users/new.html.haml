@@ -1,4 +1,8 @@
 = form_for @user do |u|
+  -if @user.errors.any?
+    -@user.errors.full_messages.each do |ue|
+      %ul
+        %li= ue  
   %h4= "Name:"
   = u.text_field :name
   %h4= "Email:"

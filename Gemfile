@@ -23,6 +23,8 @@ end
 gem 'jquery-rails'
 gem 'attr_encrypted'
 gem 'haml'
+gem 'strong_parameters'
+
 group :development do
   gem "better_errors"
 end
