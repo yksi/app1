@@ -1,0 +1,9 @@
+= form_for @user do |u|
+  %h4= "Name:"
+  = u.text_field :name
+  %h4= "Email:"
+  = u.text_field :email
+  %h4= "Password:"
+  = u.password_field :password
+  %br
+  = u.submit "Create User",   class: "btn btn-primary"
